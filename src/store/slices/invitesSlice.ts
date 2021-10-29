@@ -25,26 +25,24 @@ const invitesSlice = createSlice({
       state.teamInvites = removeItemWithId(state.teamInvites, action.payload);
     },
     addToUserInvites(state, action: PayloadAction<UserInvite>) {
-      const invite = action.payload;
-      if (hasItemWithTheSameId(state.userInvites, invite)) return;
-      state.userInvites.push(invite);
+      state.userInvites = addIfNoCopies(state.userInvites, action.payload);
     },
     removeFromUserInvites(state, action: PayloadAction<UserInvite["id"]>) {
-      state.userInvites = state.userInvites.filter(
-        (i) => i.id !== action.payload
-      );
+      state.userInvites = removeItemWithId(state.userInvites, action.payload);
     },
     addToUserInTeamInvites(state, action: PayloadAction<UserInTeamInvite>) {
-      const invite = action.payload;
-      if (hasItemWithTheSameId(state.userInTeamInvites, invite)) return;
-      state.userInTeamInvites.push(invite);
+      state.userInTeamInvites = addIfNoCopies(
+        state.userInTeamInvites,
+        action.payload
+      );
     },
     removeFromUserInTeamInvites(
       state,
       action: PayloadAction<UserInTeamInvite["id"]>
     ) {
-      state.userInTeamInvites = state.userInTeamInvites.filter(
-        (i) => i.id !== action.payload
+      state.userInTeamInvites = removeItemWithId(
+        state.userInTeamInvites,
+        action.payload
       );
     },
   },
