@@ -1,5 +1,6 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { Match } from "../../types";
+import { addIfNoCopies, removeItemWithId } from "../../utils";
 
 interface MatchesSliceInitialState {
   matches: Match[];
@@ -14,12 +15,10 @@ const matchesSlice = createSlice({
   initialState,
   reducers: {
     addToMatches(state, action: PayloadAction<Match>) {
-      const match = action.payload;
-      if (state.matches.find((m) => m.id === match.id)) return;
-      state.matches.push(match);
+      state.matches = addIfNoCopies(state.matches, action.payload);
     },
     removeFromMatches(state, action: PayloadAction<Match["id"]>) {
-      state.matches = state.matches.filter((m) => m.id !== action.payload);
+      state.matches = removeItemWithId(state.matches, action.payload);
     },
   },
 });
