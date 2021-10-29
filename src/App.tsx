@@ -1,9 +1,10 @@
 import React from 'react';
+import {MapComponent} from "./uikit/mapComponent/index"
 
 
 function App() {
   return (
-    <div>asdf</div>
+    <div>arrggt</div>
   );
 }
 
