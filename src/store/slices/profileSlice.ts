@@ -1,4 +1,4 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { Profile } from "../../types";
 
 interface ProfileSliceInitialState {
@@ -12,7 +12,11 @@ const initialState: ProfileSliceInitialState = {
 const profileSlice = createSlice({
   name: "profile",
   initialState,
-  reducers: {},
+  reducers: {
+    setProfile(state, action: PayloadAction<Profile>) {
+      state.profile = action.payload;
+    },
+  },
 });
 
 export default profileSlice.reducer;
