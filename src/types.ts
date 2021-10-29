@@ -23,20 +23,19 @@ export enum INVITE_STATUS {
   ACCEPTED = "ACCEPTED",
 }
 
-export interface TeamInvite {
+export interface BaseInvite {
   status: INVITE_STATUS;
+  id: string;
+}
+
+export interface TeamInvite extends BaseInvite {
   team_id: string;
-  id: string;
 }
 
-export interface UserInvite {
-  status: INVITE_STATUS;
+export interface UserInvite extends BaseInvite {
   user_id: string;
-  id: string;
 }
 
-export interface UserInTeamInvite {
-  status: INVITE_STATUS;
+export interface UserInTeamInvite extends BaseInvite {
   user_id: string;
-  id: string;
 }
