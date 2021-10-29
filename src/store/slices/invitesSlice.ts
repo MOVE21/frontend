@@ -49,3 +49,11 @@ const invitesSlice = createSlice({
 });
 
 export default invitesSlice.reducer;
+export const {
+  addToTeamInvites,
+  removeFromTeamInvites,
+  addToUserInvites,
+  removeFromUserInvites,
+  addToUserInTeamInvites,
+  removeFromUserInTeamInvites,
+} = invitesSlice.actions;

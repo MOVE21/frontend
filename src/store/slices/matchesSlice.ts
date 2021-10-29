@@ -24,3 +24,4 @@ const matchesSlice = createSlice({
 });
 
 export default matchesSlice.reducer;
+export const { addToMatches, removeFromMatches } = matchesSlice.actions;
