@@ -1,11 +1,12 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { Profile } from "../../types";
 
 interface ProfileSliceInitialState {
-  profile?: any;
+  profile?: Profile;
 }
 
 const initialState: ProfileSliceInitialState = {
-  profile: null,
+  profile: undefined,
 };
 
 const profileSlice = createSlice({

@@ -1,9 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { TeamInvite, UserInTeamInvite, UserInvite } from "../../types";
 
 interface InvitesSliceInitialState {
-  teamInvites: any[];
-  userInvites: any[];
-  userInTeamInvites: any[];
+  teamInvites: TeamInvite[];
+  userInvites: UserInvite[];
+  userInTeamInvites: UserInTeamInvite[];
 }
 
 const initialState: InvitesSliceInitialState = {
