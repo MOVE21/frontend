@@ -14,7 +14,6 @@ export interface Profile {
   midname: string;
   photo: string;
   descr: boolean;
-  id: string;
 }
 
 export enum INVITE_STATUS {
