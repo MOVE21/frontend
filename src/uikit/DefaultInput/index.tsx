@@ -1,9 +1,9 @@
 import React from "react";
 
 interface IDefInput{
-    placeholder:string
+    placeholder?:string
     onChange: (text:string) => void
-    value: string
+    value?: string
     type?: string;
     class?: string
 }
